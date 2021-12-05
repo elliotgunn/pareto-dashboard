@@ -114,4 +114,12 @@ def pareto_chart(table, original_df, percentile):
         tickangle=-90
     ))
 
+    fig.update_layout(
+        title={
+            'text': title,
+            'y': 0.9,
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'})
+
     return fig

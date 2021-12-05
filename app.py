@@ -21,7 +21,7 @@ app.layout = html.Div(children=[
     html.H1(children='Pareto Data Science'),
 
     html.Div(children='''
-        Performing pareto analysis on your data.
+        Performing Pareto analysis on your data.
     '''),
 
     dcc.Graph(id='pareto-chart-by-product'),
