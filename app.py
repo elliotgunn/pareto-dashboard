@@ -12,7 +12,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-from helper import make_pareto_table_by_product, pareto_chart
+from helper import make_pareto_table_by_product, pareto_chart, pareto_analysis_by_product
 
 app = dash.Dash(__name__)
 
@@ -34,20 +34,22 @@ app.layout = html.Div(children=[
 )
 def update_graph(percentile):
     # read original df and make copy
-    df = pd.read_csv('data/sample.csv', index_col=0)
+    df0 = pd.read_csv('data/sample.csv', index_col=0)
 
     # df = pd.read_csv('data/sample.csv', index_col=0)
-    df2 = df.copy()
+    df = df0.copy()
 
     # create pareto table as new csv file
-    make_pareto_table_by_product(df2, percentile)
+    make_pareto_table_by_product(df, percentile)
 
     # read new csv
     temp_df = pd.read_csv('data/plotly_data.csv', index_col=0)
 
     # create pareto chart
     # this function returns a fig directly
-    return pareto_chart(temp_df)
+    # the temp_df is for the chart
+    # the df and percentile are to update the title
+    return pareto_chart(temp_df, df, percentile)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
