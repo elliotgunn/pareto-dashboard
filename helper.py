@@ -59,7 +59,7 @@ def pareto_chart(dataframe):
     trace1 = go.Bar(
         x=dataframe[cat],
         y=dataframe[num],
-        name=num,
+        name='Amount',
         marker=dict(
             color='rgb(34,163,192)'
         )
