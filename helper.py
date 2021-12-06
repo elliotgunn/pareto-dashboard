@@ -81,6 +81,8 @@ def pareto_chart(table, original_df, percentile):
 
     # the temp_df is for the chart
     # the df and percentile are to update the title
+
+    Code modified from: https://newbedev.com/how-to-overlay-two-plots-in-same-figure-in-plotly-create-pareto-chart-in-plotly
     """
     dataframe = table
     df = original_df
@@ -121,5 +123,8 @@ def pareto_chart(table, original_df, percentile):
             'x': 0.5,
             'xanchor': 'center',
             'yanchor': 'top'})
+
+    fig.update_xaxes(title_text="Product")
+    fig.update_yaxes(title_text="Revenue")
 
     return fig
