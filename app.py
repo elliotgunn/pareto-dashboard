@@ -36,7 +36,7 @@ The default Pareto value has been set to to 80%. You can change this to any numb
 As the total number of products is more than 1000, I bucketed the products that did not make the percentile cutoff as OTHER to make the x-axis less crowded.
 
 #### Github repo
-Accessible here.
+Accessible [here](https://github.com/elliotgunn/pareto-dashboard).
 '''
 
 # layout: describes what the application looks like
